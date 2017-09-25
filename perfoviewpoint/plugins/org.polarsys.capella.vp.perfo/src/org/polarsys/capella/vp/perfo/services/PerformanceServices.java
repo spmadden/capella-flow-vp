@@ -37,8 +37,10 @@ public class PerformanceServices extends GenericPerformanceService implements IP
 		super.setBrowser(this);
 		
 		int current = super.checkPerformance(container);
-			
-		((TimeCapacity)perfoCriteriaObject).setCurrentExecutionTime(current);
+		
+		if (perfoCriteriaObject != null) {
+		    ((TimeCapacity)perfoCriteriaObject).setCurrentExecutionTime(current);
+		}
 		
 		return current;
 	}
